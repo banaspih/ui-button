@@ -101,36 +101,36 @@ var app = new Vue({
             this.setTopic()
             this.topic.publish(this.message)
         },
-        // setCamera: function() {
-        //     let without_wss = this.rosbridge_address.split('ws://')[1]
-        //     console.log(without_wss)
-        //     let domain = without_wss.split('/')[0] + '/' + without_wss.split('/')[1]
-        //     console.log(domain)
-        //     let host = domain + '/cameras'
-        //     let viewer = new MJPEGCANVAS.Viewer({
-        //         divID: 'divCamera1',
-        //         host: host,
-        //         width: 320,
-        //         height: 240,
-        //         topic: '/stream?topic=/image_raw',
-        //         ssl: true,
-        //     })
-        // },
-        // setCamera2: function() {
-        //     let without_wss = this.rosbridge_address.split('ws://')[1]
-        //     console.log(without_wss)
-        //     let domain = without_wss.split('/')[0] + '/' + without_wss.split('/')[1]
-        //     console.log(domain)
-        //     let host = domain + '/cameras'
-        //     let viewer = new MJPEGCANVAS.Viewer({
-        //         divID: 'divCamera2',
-        //         host: host,
-        //         width: 320,
-        //         height: 240,
-        //         topic: '/camera/depth/image_raw',
-        //         ssl: true,
-        //     })
-        // },
+         setCamera: function() {
+            let without_wss = this.rosbridge_address.split('ws://')[1]
+            console.log(without_wss)
+            let domain = without_wss.split('/')[0] + '/' + without_wss.split('/')[1]
+            console.log(domain)
+            let host = domain + '/cameras'
+            let viewer = new MJPEGCANVAS.Viewer({
+                divID: 'divCamera1',
+                host: host,
+                width: 320,
+                height: 240,
+                topic: '/stream?topic=/image_raw',
+                ssl: true,
+            })
+        },
+        setCamera2: function() {
+            let without_wss = this.rosbridge_address.split('ws://')[1]
+            console.log(without_wss)
+            let domain = without_wss.split('/')[0] + '/' + without_wss.split('/')[1]
+            console.log(domain)
+            let host = domain + '/cameras'
+            let viewer = new MJPEGCANVAS.Viewer({
+                divID: 'divCamera2',
+                host: host,
+                width: 320,
+                height: 240,
+                topic: '/camera/depth/image_raw',
+                ssl: true,
+            })
+        },
     },
     mounted() {
     },
